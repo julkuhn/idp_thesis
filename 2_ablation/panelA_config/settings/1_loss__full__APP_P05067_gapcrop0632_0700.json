@@ -1,0 +1,12 @@
+{
+  "design_path": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/exp_panel_ablation/output/1_loss__full__APP_P05067_gapcrop0632_0700/",
+  "binder_name": "1_loss__full__APP_P05067_gapcrop0632_0700",
+  "starting_pdb": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/first_targets_len130/crops/APP_P05067_gapcrop0632_0700.pdb",
+  "chains": "A",
+  "target_hotspot_residues": null,
+  "lengths": [
+    130,
+    130
+  ],
+  "number_of_final_designs": 999999
+}

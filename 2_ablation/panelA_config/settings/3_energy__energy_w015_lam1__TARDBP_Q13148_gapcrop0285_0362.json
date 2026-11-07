@@ -1,0 +1,12 @@
+{
+  "design_path": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/exp_panel_ablation/output/3_energy__energy_w015_lam1__TARDBP_Q13148_gapcrop0285_0362/",
+  "binder_name": "3_energy__energy_w015_lam1__TARDBP_Q13148_gapcrop0285_0362",
+  "starting_pdb": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/first_targets_len130/crops/TARDBP_Q13148_gapcrop0285_0362.pdb",
+  "chains": "A",
+  "target_hotspot_residues": null,
+  "lengths": [
+    130,
+    130
+  ],
+  "number_of_final_designs": 999999
+}

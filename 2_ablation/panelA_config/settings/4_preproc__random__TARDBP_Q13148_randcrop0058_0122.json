@@ -1,0 +1,12 @@
+{
+  "design_path": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/exp_panel_ablation/output/4_preproc__random__TARDBP_Q13148_randcrop0058_0122/",
+  "binder_name": "4_preproc__random__TARDBP_Q13148_randcrop0058_0122",
+  "starting_pdb": "/capstor/store/cscs/swissai/ab011/jkuhn/idp_bindcraft/exp_panel_ablation/crops_random/TARDBP_Q13148_randcrop0058_0122.pdb",
+  "chains": "A",
+  "target_hotspot_residues": null,
+  "lengths": [
+    130,
+    130
+  ],
+  "number_of_final_designs": 999999
+}
