@@ -12,15 +12,15 @@ python -u bindcraft.py --settings <target>.json --filters <filters>.json --advan
 ## Files
 
 ```
-config/
-  advanced_actif_uncapped.json   <- THE actif production config (the one to use)
-  advanced_full_uncapped.json    <- the IDP baseline it was compared against
-  filters_idp.json               <- acceptance filters (identical for both arms)
-  EXAMPLE_target_settings.json   <- one per-target file, as a template
-manifests/
-  crops_500.txt, crops_100_full.txt, jobs_actif.txt
-scripts/
-  run_up500_actif.slurm, run_up500_actif_requeue.slurm
+advanced_actif_uncapped.json     the actif production config
+advanced_full_uncapped.json      the IDP baseline it was compared against
+filters_idp.json                 acceptance filters, identical for both arms
+EXAMPLE_target_settings.json     one per-target file, as a template
+crops_500.txt, crops_100_full.txt, jobs_actif.txt, jobs_full.txt
+run_up500_actif.slurm, run_up500_actif_requeue.slurm, run_up500_full.slurm
+manifest.csv                     one row per run
+binder_structural_features.csv   per-design structural measurements
+output/                          per-crop design and trajectory statistics
 ```
 
 `jobs_actif.txt` is **tab-separated**: `<settings>\t<advanced>\t<filters>`, one line per crop,
@@ -56,16 +56,16 @@ source /miniforge3/etc/profile.d/conda.sh
 conda activate BindCraft                       # inside the jax_env container
 cd <idp_bindcraft>                       # ../bindcraft_code/idp_bindcraft
 python -u bindcraft.py \
-  --settings  config/EXAMPLE_target_settings.json \
-  --advanced  config/advanced_actif_uncapped.json \
-  --filters   config/filters_idp.json
+  --settings  EXAMPLE_target_settings.json \
+  --advanced  advanced_actif_uncapped.json \
+  --filters   filters_idp.json
 ```
 
 To target your own crop, copy `EXAMPLE_target_settings.json` and set `starting_pdb`
 (the cropped target PDB), `design_path` (output dir), `binder_name`, and
 `lengths` (`[130,130]` was used throughout).
 
-At scale (`scripts/run_up500_actif.slurm`): 1 node = **16 crops on 4 GPUs** (4 per GPU,
+At scale (`run_up500_actif.slurm`): 1 node = **16 crops on 4 GPUs** (4 per GPU,
 `XLA_PYTHON_CLIENT_MEM_FRACTION=0.22`), array `1-32` to cover 500 crops. The script traps
 `USR1` 120 s before walltime and resubmits itself with `--dependency=afterany`, up to
 `MAX_LEGS=4` legs, so a campaign survives the 12 h limit. Edit `ROOT`, `BINDCRAFT_DIR`,
@@ -77,7 +77,7 @@ At scale (`scripts/run_up500_actif.slurm`): 1 node = **16 crops on 4 GPUs** (4 p
 baseline (100 crops run both ways) gave **2,901 accepted from 20,053 trajectories** — the
 actif objective is the single change responsible for the difference.
 
-Per-crop numbers: `appendix/A4_production_500crops/A4_production_crops_all.csv`.
+Per-crop numbers: `output/<crop>__actif/final_design_stats.csv`.
 
 ## Outputs per run
 
