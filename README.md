@@ -9,7 +9,7 @@
 | `3_production_up500/` | 500-crop campaign: configurations, job scripts, SLURM scripts, per-crop statistics |
 | `4_validation/` | Boltz-2 re-prediction: inputs, scores, analysis script |
 | `5_calvados/` | CALVADOS analysis scripts and summary outputs |
-| `bindcraft_code/` | the BindCraft 1 IDP fork, the BindCraft 2 baseline, and the per-arm configuration JSONs |
+| `bindcraft_code/` | the IDP-BindCraft, the BindCraft 2 baseline, and the per-arm configuration JSONs |
 
 ## Running a design
 
