@@ -1,53 +1,5 @@
 #!/usr/bin/env python3
-"""
-Step 04b: Generate IDP-specific crops for BindCraft.
-
-Runs AFTER step 05 has been run in structured mode (produces
-filtered_domain_stats.csv, the accepted/quality-filtered structured domains).
-Three-step per-protein logic:
-  1. full sequence minus the accepted structured-domain footprint (from
-     --filtered-domain-stats-csv) minus membrane-embedded residue ranges (from
-     --stats-csv / domain_stats.csv). A domain rejected by step 05 (wrong
-     length, gyration radius, too few contacts, touches membrane somewhere in
-     its span, ...) is deliberately NOT excluded here — many real PAE-clusters
-     have low mean pLDDT (genuinely low-confidence/flexible) and must stay
-     eligible for IDP cropping; only what step 05 actually accepted as a good
-     structured target is carved out.
-  2. Results of step 1 filtered down to accessible residues: raw (unsmoothed), strict
-     per-residue RSA from DSSP strictly greater than --rsa-threshold. A single
-     buried residue splits a segment in two.
-  3. Results of step 2 are split into contiguous gap segments. Within each, runs AF-Bind window
-     scoring (Piovesan et al. 2022) at several dynamic lengths (30-300 aa by
-     default), snapping both crop termini to the nearest hydrophilic residue
-     (avoids termini BindCraft's helicity optimization tends to bury, which
-     causes artifacts), and rejecting a candidate whose boundary sits right
-     next to a long buried run as a secondary, local safety net.
-  4. Selects crops by local score peaks: sort by score, keep everything
-     except exact-duplicate (start, end) pairs — no exclusion masking, so
-     crops may legitimately overlap each other (they never overlap an
-     accepted domain, since they're only ever generated inside gaps).
-  5. Writes cropped PDB files and BindCraft target settings JSONs.
-
-Outputs:
-  --idp-crops-stats-path  (CSV, analogous to domain_stats.csv — input for step 05 --idp)
-  --bindcraft-jobs-file   (text file, one settings JSON path per line)
-
-Usage:
-  # 1) structured mode first (produces filtered_domain_stats.csv)
-  python 05_filter_domains_and_create_sweep_index.py
-
-  # 2) this script
-  python 04b_generate_idp_crops.py \\
-      --filtered-domain-stats-csv /path/to/filtered_domain_stats.csv \\
-      --crops-dir /path/to/PDB_IDP_Crops \\
-      --settings-dir /path/to/Settings_IDP \\
-      --design-root /path/to/output_idp \\
-      --bindcraft-advanced-settings /path/to/idp_4stage_multimer_iface_mv_strongiface.json
-
-  # 3) idp mode of step 05 (quality re-filter + sweep index)
-  python 05_filter_domains_and_create_sweep_index.py --idp \\
-      --min-domain-length 30 --max-domain-length 300 --idp-max-plddt 0
-"""
+"""Select IDP target crops from the regions outside the accepted structured domains."""
 
 import argparse
 import json

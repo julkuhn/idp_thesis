@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Panel-5 loss ablation (BC1-fork, IDR crops, n=5 targets).
-Always plots acc/800 PLUS all four confidence scores: i_pTM, i_pAE, i_pTM_iface, i_pAE_iface.
-Macro over targets, error = SE of macro mean."""
+"""Five-target ablation figure: accepted-design yield and the four confidence scores."""
 import os, csv, glob, math, statistics as st
 import numpy as np
 import matplotlib; matplotlib.use("Agg")

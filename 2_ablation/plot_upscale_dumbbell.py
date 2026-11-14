@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Per-crop paired comparison (dumbbell) for the upscale production runs.
-x = crop (sorted by IDP value within each panel), y = metric; one dot for IDP(full),
-one for actif, connected by a line coloured by which arm is better. Shows the full
-spread across the 100 paired crops behind each mean."""
+"""Per-crop paired comparison of the 100-crop runs."""
 import glob, os, csv, statistics as st
 import numpy as np
 import matplotlib; matplotlib.use("Agg")

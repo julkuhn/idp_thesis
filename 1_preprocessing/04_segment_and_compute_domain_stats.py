@@ -1,3 +1,4 @@
+"""Segment AlphaFold models into domains from the PAE matrix and compute per-domain statistics."""
 import pandas as pd
 import os
 import tempfile

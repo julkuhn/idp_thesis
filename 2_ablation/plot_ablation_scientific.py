@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Publication-style ablation figures (2026-10-22).
-Single-axis throughout (no dual axes). acc/800 and scores are macro-averaged
-(per-target mean, then mean over targets); error bars are SE of the macro mean."""
+"""Ablation figures for accepted-design yield and confidence scores."""
 import os, csv, json, glob, math, statistics as st
 import numpy as np
 import matplotlib

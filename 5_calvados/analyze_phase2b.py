@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 2b (prebound) Auswertung — selbe Metriken wie Phase 2a."""
+"""CALVADOS phase 2b: the phase 2 metrics for runs initialised from the bound pose."""
 import os, glob, re, json, csv
 import numpy as np
 import MDAnalysis as mda

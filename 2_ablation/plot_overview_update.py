@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Update fig_ablation_overview_errorbars.png in publication style.
-Sectioned 2x4 overview (acc/800 + i_pTM_iface), full repeated as baseline per section.
-MACRO averaging (per-target mean, then mean over targets); error = SE of the macro mean.
-No significance stars: at n=5 targets the paired test cannot reach p<0.05 (min 2/2^5=0.063)."""
+"""Sectioned overview figure for the five-target ablation."""
 import os, csv, json, glob, math, statistics as st
 import numpy as np
 import matplotlib

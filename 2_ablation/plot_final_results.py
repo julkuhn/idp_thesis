@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Final results overview — IDP binder design campaign (BC1-fork)."""
+"""Overview figure for the IDP binder design campaign."""
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np

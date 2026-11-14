@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Phase-3 positive-control analysis: do KNOWN complexes stay bound in CALVADOS?
-Same measure as phase2 (com_dist < 30 A = bound). Controls: 1YCR (p53-MDM2), 4BXL."""
+"""CALVADOS phase 3: target-binder proximity for the experimentally determined controls."""
 import os, glob
 import numpy as np
 import MDAnalysis as mda

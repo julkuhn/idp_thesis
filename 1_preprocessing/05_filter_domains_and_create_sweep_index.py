@@ -1,15 +1,4 @@
-"""Filter domain statistics and create sweep index TSV batches.
-
-This script:
-1) Loads per-domain statistics from `domain_stats.csv`.
-2) Applies quality/structure/membrane filters based on CLI thresholds.
-3) Writes the filtered stats table for traceability.
-4) Builds one or more sweep index TSV files for downstream design runs.
-
-Default outputs:
-- Filtered stats: Data/Filtered/filtered_domain_stats.csv
-- Sweep index batches: Data/Filtered/sweep_index_batch*.tsv
-"""
+"""Filter the domain statistics and write the sweep index TSVs."""
 
 import argparse
 import pandas as pd

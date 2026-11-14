@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Upscale PRODUCTION runs, paired: actif vs IDP(full) on the 100 crops run both ways.
-Same 5-panel layout as fig_all_ablations_errorbars: acc/800 + the four confidence scores.
-Macro over crops (per-crop mean, then mean across crops); error = SE of the macro mean."""
+"""Paired comparison of actif lam1 and idp ref on the 100 crops run with both."""
 import glob, os, csv, math, statistics as st
 import numpy as np
 import matplotlib; matplotlib.use("Agg")

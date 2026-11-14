@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Updated ablation plots (2026-10-22): Panel-5 (BC1) + 16-target (BC1) + BC2.
-acc/800 and scores are macro-averaged (per-target mean, then mean over targets)."""
+"""Ablation figures for the five-target panel and the BindCraft 2 arms."""
 import os, csv, json, glob, statistics as st
 import numpy as np
 import matplotlib

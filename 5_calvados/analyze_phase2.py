@@ -1,19 +1,5 @@
 #!/usr/bin/env python3
-"""Phase-2-Auswertung: pro (Target x Arm)-Komplex die CALVADOS-Daten gegen das
-BindCraft-Interface halten.
-
-Fragen:
-  1. Bleibt der Komplex zusammen? (median COM-distance Target<->Binder)
-  2. Deckt sich die CALVADOS-Kontaktkarte mit BindCrafts Interface-Residuen?
-  3. Gibt es systematische Unterschiede full / becraft_w1_lam0 / ipsae_replace?
-
-Datenprodukte je Komplex in sims/<name>/<name>_complex/data/:
-  <name>_complex_<name>_target_rg.npy    - Target-Rg(t) [n_frames]
-  <name>_complex_<name>_binder_rg.npy    - Binder-Rg(t)
-  <name>_complex_<name>_target_<name>_binder_cmap.npy - target x binder Kontaktzahl
-  <name>_complex.dcd                     - Trajektorie
-  <name>_complex_com_traj.dcd            - COM-only-Trajektorie (2 pseudo-atoms)
-"""
+"""CALVADOS phase 2: target-binder proximity and contact overlap per complex."""
 import os, glob, re, json, csv
 import numpy as np
 import MDAnalysis as mda

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boltz2 orthogonal validation: independent-model iptm for actif vs IDP accepted designs."""
+"""Boltz-2 interface scores for the re-predicted designs."""
 import csv, numpy as np, statistics as st
 from scipy import stats
 import matplotlib; matplotlib.use("Agg")

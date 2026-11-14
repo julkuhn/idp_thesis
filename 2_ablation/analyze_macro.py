@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""Macro-averaged ablation analysis.
-
-Every statistic is computed PER TARGET first, then averaged across targets, so that
-a single high-yield target cannot dominate the pooled number. Also emits the
-per-target breakdown so confounded arms are visible.
-
-Significance:
-  acceptance  -- paired Wilcoxon signed-rank across the 5 targets (arm vs baseline),
-                 plus the pooled two-proportion z-test for reference
-  scores      -- paired Wilcoxon signed-rank on per-target means
-"""
+"""Per-target ablation statistics and paired Wilcoxon tests."""
 import os, csv, json, math, sys, statistics as st
 from collections import defaultdict
 import numpy as np
