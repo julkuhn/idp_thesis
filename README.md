@@ -1,7 +1,4 @@
-# idp_thesis
-
-Code and run configurations for the master's thesis *Large Scale Automized Binder Design
-to Disordered Proteins* (Julia Kuhn).
+Large Scale Automized Binder Design to Disordered Proteins (Masters Thesis by Julia Kuhn).
 
 ## Layout
 
@@ -26,10 +23,6 @@ Arm configurations are in `bindcraft_code/ablation_arm_configs/`. The production
 configuration is `3_production_up500/advanced_actif_uncapped.json` with
 `3_production_up500/filters_idp.json`. Job manifests are tab-separated,
 `<settings>\t<advanced>\t<filters>`, one line per crop.
-
-Analysis scripts need numpy, scipy and matplotlib. They carry absolute paths from the
-cluster the work ran on; repoint the `ROOT` / `OUT` variable at the top of a script before
-running it. Versions are in [`REPRODUCIBILITY_VERSIONS.md`](REPRODUCIBILITY_VERSIONS.md).
 
 `bindcraft_code/bindcraft1_idp_fork/` is the modified copy of BindCraft for IDPs and
 `bindcraft_code/bindcraft2_v1.0.4/` an unmodified copy of BindCraft 2
