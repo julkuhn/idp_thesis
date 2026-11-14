@@ -26,5 +26,5 @@ configuration is `3_production_up500/advanced_actif_uncapped.json` with
 
 ## Licence
 
-`bindcraft_code/idp_bindcraft/` is a the modified copy of BindCraft for IDPs
+`bindcraft_code/idp_bindcraft/` is a modified copy of BindCraft for IDPs
 `bindcraft_code/bindcraft2_v1.0.4/` an unmodified copy of BindCraft 2
