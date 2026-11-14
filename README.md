@@ -1,4 +1,5 @@
-# Large Scale Automized Binder Design to Disordered Proteins (Masters Thesis by Julia Kuhn).
+# Large Scale Automized Binder Design to Disordered Proteins 
+Masters Thesis by Julia Kuhn
 
 ## Layout
 
