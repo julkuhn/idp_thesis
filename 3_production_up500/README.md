@@ -54,7 +54,7 @@ Single crop (interactive, one GPU):
 ```bash
 source /miniforge3/etc/profile.d/conda.sh
 conda activate BindCraft                       # inside the jax_env container
-cd <bindcraft1_idp_fork>                       # ../bindcraft_code/bindcraft1_idp_fork
+cd <idp_bindcraft>                       # ../bindcraft_code/idp_bindcraft
 python -u bindcraft.py \
   --settings  config/EXAMPLE_target_settings.json \
   --advanced  config/advanced_actif_uncapped.json \
